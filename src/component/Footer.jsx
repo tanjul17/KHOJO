@@ -23,17 +23,23 @@ const Footer = () => {
       <footer>
         <div className="container grid grid-four-column">
           <div className="footer-about">
-            <h3>Khojo bhaiya</h3>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magni, facere!</p>
+            <h3>KhoJo Bhaiya Khojo...</h3>
+            <p>
+              In this website you can find information regarding what should you
+              have to do and how you can achieve your target destiny with guided
+              roadmap.
+            </p>
           </div>
           {/* 2nd column */}
           <div className="footer-subscribe">
-            <h3>Subscribe to get important updates</h3>
+            <h3>Join Us to get important updates</h3>
             <form action="#">
-              <input type="email"
-              required
-              autoComplete="off"
-              placeholder="Email" />
+              <input
+                type="email"
+                required
+                autoComplete="off"
+                placeholder="Email"
+              />
               <input type="submit" value="Subscribe" />
             </form>
           </div>
@@ -42,20 +48,30 @@ const Footer = () => {
             <h3>Follow US</h3>
             <div className="footer-social--icons">
               <div>
-                <a href="https://react-icons.github.io/react-icons/icons?name=fa" target="_blank">
-                <FaDiscord className="icons"/>
+                <a href="" target="_blank">
+                  <FaDiscord className="icons" />
                 </a>
               </div>
               <div>
-                <FaInstagram className="icons"/>
+                <a
+                  href="https://www.instagram.com/tanjul._sarathe/"
+                  target="_blank"
+                >
+                  <FaInstagram className="icons" />
+                </a>
               </div>
               <div>
-                <FaLinkedin className="icons"/>
+                <a
+                  href="https://www.linkedin.com/in/sarathetanjul/"
+                  target="_blank"
+                >
+                  <FaLinkedin className="icons" />
+                </a>
               </div>
             </div>
           </div>
-           {/* 4th column  */}
-           <div className="footer-contact">
+          {/* 4th column  */}
+          <div className="footer-contact">
             <h3>Call Us</h3>
             <h3>+91 6260228887</h3>
           </div>
@@ -63,9 +79,7 @@ const Footer = () => {
         <div className="footer-bottom--section">
           <hr />
           <div className="container grid grid-two-column">
-            <p>
-              @{new Date().getFullYear()} Khojo bhiaya. All Rights Reserved
-            </p>
+            <p>@{new Date().getFullYear()} KhoJo. All Rights Reserved</p>
             <div>
               <p>PRIVACY POLICY</p>
               <p>TERMS & CONDITIONS</p>

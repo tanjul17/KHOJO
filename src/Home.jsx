@@ -10,8 +10,8 @@ const Home = () => {
   return (
     <>
       <HeroSection />
-      <Roadmap/>
       <Services />
+      <Roadmap/>
       <Contact/>
     </>
   );

@@ -1,9 +1,7 @@
 import React, { useContext, useReducer, useEffect } from "react";
 import reducer from "./reducer";
-
+import axios from "axios";
 const AppContext = React.createContext();
-
-const API = "https://thapareactapi.up.railway.app";
 
 const initialState = {
   name: "",
@@ -14,11 +12,12 @@ const initialState = {
 const AppProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
+
   const updateHomePage = () => {
     return dispatch({
       type: "HOME_UPDATE",
       payload: {
-        name: "Khojo.com",
+        name: "KhoJo.",
         image: "./images/hero.svg",
       },
     });
@@ -34,20 +33,9 @@ const AppProvider = ({ children }) => {
     });
   };
 
-  //  to get the api data
-  const getServices = async (url) => {
-    try {
-      const res = await fetch(`https://thapareactapi.up.railway.app`);
-      const data = await res.json();
-      dispatch({ type: "GET_SERVICES", payload: data });
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
   // to call the api
   useEffect(() => {
-    getServices(API);
+    // getServices();
   }, []);
 
   return (
@@ -57,7 +45,7 @@ const AppProvider = ({ children }) => {
   );
 };
 
-// gloabal custom hook
+// global custom hook
 const useGlobalContext = () => {
   return useContext(AppContext);
 };

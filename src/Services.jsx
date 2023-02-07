@@ -3,28 +3,85 @@ import styled from "styled-components";
 import { useGlobalContext } from "./context";
 import { NavLink } from "react-router-dom";
 import { Button } from "./styles/Button";
+import webDev from "./images/images/web_dev1.png";
+import DS from "./images/images/ui-ux.png";
+import AppDev from "./images/images/Android_development.webp";
+import Blockchain from "./images/images/Blockchain_development.png";
+import ML from "./images/images/Machine_learning.webp";
+import DSA from "./images/images/DSA.jpg";
+
+const getServices = [
+  {
+    id: "01",
+    title: "Best Web Development Course",
+    imgUrl: webDev,
+    students: 5.3,
+    rating: 4.7,
+    url: "./src/courses/web.html",
+  },
+  {
+    id: "02",
+    title: "Best Data Science Courses",
+    imgUrl: DS,
+    students: 5.3,
+    rating: 4,
+    url: "./src/courses/Ds.html",
+  },
+
+  {
+    id: "03",
+    title: "Best App Development Courses",
+    imgUrl: AppDev,
+    students: 5.3,
+    rating: 1.7,
+    url: "./src/courses/App.html",
+  },
+
+  {
+    id: "04",
+    title: "Best Blockchain Development Courses",
+    imgUrl: Blockchain,
+    students: 5.3,
+    rating: 1.7,
+    url: "./src/courses/blockchain.html",
+  },
+  {
+    id: "04",
+    title: "Best AI/ML Courses",
+    imgUrl: ML,
+    students: 5.3,
+    rating: 1.7,
+    url: "./src/courses/Ml.html",
+  },
+  {
+    id: "04",
+    title: "Best DSA Courses",
+    imgUrl: DSA,
+    students: 5.3,
+    rating: 1.7,
+    url: "./src/courses/Dsa.html",
+  },
+];
 
 const Services = () => {
-  const { services } = useGlobalContext();
-  console.log(services);
-
   return (
     <Wrapper className="section">
       <h2 className="common-heading">Courses</h2>
       <div className="container grid grid-three-column">
-        {services.map((curElem) => {
-          const { id, name, image, description } = curElem;
+        {getServices.map((curElem) => {
+          const { id, title, imgUrl } = curElem;
           return (
             <div key={id} className="card">
               <figure>
-                <img src={image} alt={name} />
+                <img src={imgUrl} alt="#" />
               </figure>
               <div className="card-data">
-                <h3>{name}</h3>
-                <p>{description}</p>
-                <NavLink to="/service">
-                  <Button className="btn">Read More</Button>
-                </NavLink>
+                <h3>{title}</h3>
+                <Button className="btn">
+                  <a href={curElem.url} target="_blank" className="btn-in">
+                    Read More
+                  </a>
+                </Button>
               </div>
             </div>
           );
@@ -59,9 +116,15 @@ const Wrapper = styled.section`
       align-items: center;
       color: rgb(98 84 243);
       font-size: 1.4rem;
+      .btn-in {
+        color: blue;
+      }
       &:hover {
         background-color: rgb(98 84 243);
         color: #fff;
+        .btn-in:hover {
+          color: #fff;
+        }
       }
     }
   }

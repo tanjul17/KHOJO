@@ -2,11 +2,15 @@ import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import { CgMenu, CgCloseR } from "react-icons/cg";
+import { useAuth0 } from "@auth0/auth0-react";
+import { Button } from "../styles/button";
 
 const Navbar = () => {
   const [openMenu, setOpenMenu] = useState(false);
+  const { user, loginWithRedirect, logout, isAuthenticated } = useAuth0();
   const Nav = styled.nav`
     .navbar-list {
+      align-items: center;
       display: flex;
       gap: 4.8rem;
       li {
@@ -55,7 +59,7 @@ const Navbar = () => {
         position: absolute;
         top: 0;
         left: 0;
-        background-color:orange;
+        background-color: orange;
         display: flex;
         justify-content: center;
         align-content: center;
@@ -121,29 +125,53 @@ const Navbar = () => {
             </NavLink>
           </li>
           <li>
-          <NavLink
+            <NavLink
               className="navbar-link"
               onClick={() => setOpenMenu(false)}
-              to="/service">
+              to="/service"
+            >
               Courses
             </NavLink>
           </li>
           <li>
-          <NavLink
+            <NavLink
               className="navbar-link"
               onClick={() => setOpenMenu(false)}
-              to="/roadmap">
+              to="/roadmap"
+            >
               Roadmap
             </NavLink>
           </li>
           <li>
-          <NavLink
+            <NavLink
               className="navbar-link"
               onClick={() => setOpenMenu(false)}
-              to="/contact">
+              to="/contact"
+            >
               Contact
             </NavLink>
           </li>
+          {isAuthenticated && (
+            <li>
+              <p>Hi {user.name}</p>
+            </li>
+          )}
+          {isAuthenticated ? (
+            <li>
+              {" "}
+              <Button
+                onClick={() =>
+                  logout({ logoutParams: { returnTo: window.location.origin } })
+                }
+              >
+                Log Out
+              </Button>
+            </li>
+          ) : (
+            <li>
+              <Button onClick={() => loginWithRedirect()}>Log In</Button>;
+            </li>
+          )}
         </ul>
         {/* //nav icon */}
         <div className="mobile-navbar-btn">

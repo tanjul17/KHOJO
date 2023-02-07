@@ -11,6 +11,7 @@ import Navbar from "./component/Navbar";
 import { GlobalStyle } from "./GlobalStyle";
 import Error from "./Error";
 import GoToTop from "./component/GoToTop";
+
 const App = () => {
   const theme={
     colors: {
@@ -32,7 +33,9 @@ const App = () => {
     },
     media: { mobile: "768px", tab: "998px" },
   };
+
   
+
   return (
     <ThemeProvider theme={theme}>
     <GlobalStyle/>
@@ -41,7 +44,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home/>}/>
         <Route path="/about" element={<About/>}/>
-        {/* <Route path="/services" element={<Services/>}/> */}
+        <Route path="/service" element={<Services/>}/>
         <Route path="/roadmap" element={<Roadmap/>}/>
         <Route path="/contact" element={<Contact/>}/>
         <Route path="*" element={<Error/>}/>
