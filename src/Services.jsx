@@ -17,7 +17,7 @@ const getServices = [
     imgUrl: webDev,
     students: 5.3,
     rating: 4.7,
-    url: "./src/courses/web.html",
+    url: "../courses/web.html",
   },
   {
     id: "02",
@@ -25,7 +25,7 @@ const getServices = [
     imgUrl: DS,
     students: 5.3,
     rating: 4,
-    url: "./src/courses/Ds.html",
+    url: "../courses/Ds.html",
   },
 
   {
@@ -34,7 +34,7 @@ const getServices = [
     imgUrl: AppDev,
     students: 5.3,
     rating: 1.7,
-    url: "./src/courses/App.html",
+    url: "../courses/App.html",
   },
 
   {
@@ -43,7 +43,7 @@ const getServices = [
     imgUrl: Blockchain,
     students: 5.3,
     rating: 1.7,
-    url: "./src/courses/blockchain.html",
+    url: "../courses/blockchain.html",
   },
   {
     id: "04",
@@ -51,7 +51,7 @@ const getServices = [
     imgUrl: ML,
     students: 5.3,
     rating: 1.7,
-    url: "./src/courses/Ml.html",
+    url: "../courses/Ml.html",
   },
   {
     id: "04",
@@ -59,7 +59,7 @@ const getServices = [
     imgUrl: DSA,
     students: 5.3,
     rating: 1.7,
-    url: "./src/courses/Dsa.html",
+    url: "../courses/Dsa.html",
   },
 ];
 
