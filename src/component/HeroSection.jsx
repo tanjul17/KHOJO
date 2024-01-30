@@ -5,30 +5,31 @@ import { Button } from "../styles/button";
 import { useGlobalContext } from "../context";
 
 const HeroSection = () => {
-  const { name, image } = useGlobalContext();
-  return (
-    <Wrapper>
-      <div className="container grid grid-two-column">
-        <div className="section-hero-data">
-          <p className="hero-top-data">Welcome to our Community !</p>
-          <h1 className="hero-heading">{name}</h1>
-          <p className="hero-para">A place to find your Destiny.</p>
-          <Button className="btn hireme-btn">
-            <NavLink to="/contact">Join Us</NavLink>
-          </Button>
-        </div>
+  const { name, image, description, btn } = useGlobalContext();
 
-        <div className="section-hero-image">
-          <picture>
-            <img src={image} alt="hero image" className="hero-img" />
-          </picture>
+  return (
+      <Wrapper>
+        <div className="container grid grid-two-column">
+          <div className="section-hero-data">
+            <p className="hero-top-data">Welcome to our Community !</p>
+            <h1 className="hero-heading">{name}</h1>
+            <p className="hero-para">Your Personalized Course Finder. Tailored roadmaps, course recommendations, and a vibrant learning community await. Start your journey today!</p>
+            <Button className="btn hireme-btn">
+              <NavLink to="/contact">Join Us</NavLink>
+            </Button>
+          </div>
+          <div className="section-hero-image">
+            <picture>
+              <img src={image} alt="hero image" className="hero-img" />
+            </picture>
+          </div>
         </div>
-      </div>
-    </Wrapper>
+      </Wrapper>
   );
 };
+
 const Wrapper = styled.section`
-  padding: 9rem 0;
+  padding: 10rem 0;
   .section-hero-data {
     display: flex;
     flex-direction: column;

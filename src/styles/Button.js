@@ -8,6 +8,7 @@ export const Button = styled.button`
   color: rgb(255 255 255);
   padding: 1.4rem 2.4rem;
   border: none;
+  border-radius: 10px; 
   text-transform: uppercase;
   text-align: center;
   cursor: pointer;
@@ -20,7 +21,9 @@ export const Button = styled.button`
     box-shadow: 0 2rem 2rem 0 rgb(132 144 255 / 30%);
     box-shadow: ${({ theme }) => theme.colors.shadowSupport};
     transform: scale(0.96);
+    border-radius: 10px; 
   }
+  
   a {
     text-decoration: none;
     color: rgb(255 255 255);

@@ -1,15 +1,13 @@
 {
   "name": "reactwebsite",
-  "homepage": "https://tanjul17.github.io/Khojo.", 
+  "homepage": "https://tanjul17.github.io/Khojo", 
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "preview": "vite preview"
   },
   "dependencies": {
     "@auth0/auth0-react": "^2.0.0",

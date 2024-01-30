@@ -2,18 +2,19 @@ import About from "./About";
 import Home from "./Home";
 import Services from "./Services";
 import Roadmap from "./Roadmap";
-import Contact from "./Contact"; 
-import {BrowserRouter, Routes,Route} from "react-router-dom"
+import Contact from "./Contact";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Footer from "./component/Footer";
 import Header from "./component/Header";
-import {ThemeProvider} from "styled-components";
+import { ThemeProvider } from "styled-components";
 import Navbar from "./component/Navbar";
 import { GlobalStyle } from "./GlobalStyle";
 import Error from "./Error";
 import GoToTop from "./component/GoToTop";
+import WebDev from "./WebDev";
 
 const App = () => {
-  const theme={
+  const theme = {
     colors: {
       heading: "rgb(24 24 29)",
       text: "rgb(24 24 29)",
@@ -34,26 +35,24 @@ const App = () => {
     media: { mobile: "768px", tab: "998px" },
   };
 
-  
-
   return (
     <ThemeProvider theme={theme}>
-    <GlobalStyle/>
-    <BrowserRouter>
-    <Header />
-      <Routes>
-        <Route path="/" element={<Home/>}/>
-        <Route path="/about" element={<About/>}/>
-        <Route path="/service" element={<Services/>}/>
-        <Route path="/roadmap" element={<Roadmap/>}/>
-        <Route path="/contact" element={<Contact/>}/>
-        <Route path="*" element={<Error/>}/>
-      </Routes>
-      <GoToTop />
-      <Footer />
-    </BrowserRouter>
-    </ThemeProvider> 
-  )
+      <GlobalStyle />
+      <BrowserRouter>
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/service" element={<Services />}/>
+          <Route path="/roadmap" element={<Roadmap />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="*" element={<Error />} />
+        </Routes>
+        <GoToTop />
+        <Footer />
+      </BrowserRouter>
+    </ThemeProvider>
+  );
 };
 
 export default App;

@@ -35,6 +35,7 @@ const Navbar = () => {
     }
     .mobile-navbar-btn {
       display: none;
+      cursor: pointer;
       .close-outline {
         display: none;
       }
@@ -59,7 +60,7 @@ const Navbar = () => {
         position: absolute;
         top: 0;
         left: 0;
-        background-color: orange;
+        background-color: #FFFFFF;
         display: flex;
         justify-content: center;
         align-content: center;
@@ -72,7 +73,7 @@ const Navbar = () => {
           .navbar-link {
             &:link,
             &:visited {
-              font-size: 4.2rem;
+              font-size: 3rem;
             }
             &:hover,
             &:active {
@@ -85,8 +86,9 @@ const Navbar = () => {
         display: none;
         font-size: 4.2rem;
         position: absolute;
-        top: 3%;
+        top: 26%;
         right: 10%;
+        cursor: pointer;
         color: ${({ theme }) => theme.colors.black};
         z-index: 9999;
       }
@@ -139,7 +141,7 @@ const Navbar = () => {
               onClick={() => setOpenMenu(false)}
               to="/roadmap"
             >
-              Roadmap
+              Roadmaps
             </NavLink>
           </li>
           <li>

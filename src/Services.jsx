@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { useGlobalContext } from "./context";
 import { NavLink } from "react-router-dom";
-import { Button } from "./styles/Button";
+import {Button}  from "./styles/Button.js";
 import webDev from "./images/images/web_dev1.png";
 import DS from "./images/images/ui-ux.png";
 import AppDev from "./images/images/Android_development.webp";
@@ -78,7 +78,7 @@ const Services = () => {
               <div className="card-data">
                 <h3>{title}</h3>
                 <Button className="btn">
-                  <a href={curElem.url} target="_blank" className="btn-in">
+                  <a href={curElem.url}  className="btn-in">
                     Read More
                   </a>
                 </Button>

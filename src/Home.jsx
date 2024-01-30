@@ -4,6 +4,7 @@ import Contact from "./Contact";
 import { useGlobalContext } from "./context";
 import Roadmap from "./Roadmap";
 import Services from "./Services";
+
 const Home = () => {
   const { updateHomePage } = useGlobalContext();
   useEffect(() => updateHomePage(), []);

@@ -1,51 +1,60 @@
 import React, { useContext, useReducer, useEffect } from "react";
 import reducer from "./reducer";
 import axios from "axios";
+
+
 const AppContext = React.createContext();
 
 const initialState = {
   name: "",
   image: "",
+  description: "",
+  btn: "",
   services: [],
 };
+
 
 const AppProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
-
   const updateHomePage = () => {
-    return dispatch({
+    dispatch({
       type: "HOME_UPDATE",
       payload: {
-        name: "KhoJo.",
+        name: "KHOJO",
         image: "./images/hero.svg",
+        description:
+        "Your Personalized Course Finder. Tailored roadmaps, course recommendations, and a vibrant learning community await. Start your journey today!",
+      btn: "Join Us",
       },
     });
   };
 
   const updateAboutPage = () => {
-    return dispatch({
+    dispatch({
       type: "ABOUT_UPDATE",
       payload: {
-        name: "Tanjul Sarathe",
+        name: " I'm Tanjul Sarathe",
         image: "./images/about1.svg",
+        description:
+          "Full Stack Web Developer and 3D Design Enthusiast | 3rd-Year Student at VIT Bhopal | Passionate about Technical Education, Hands-On Learning, and Problem Solving in DSA and Competitive Programming.",
+        btn: "Hire me",
       },
     });
   };
 
-  // to call the api
   useEffect(() => {
-    // getServices();
+    // You may perform additional setup or data fetching here
   }, []);
 
   return (
-    <AppContext.Provider value={{ ...state, updateHomePage,updateAboutPage}}>
+    <AppContext.Provider value={{ ...state, updateHomePage, updateAboutPage }}>
       {children}
+      {/* <HeroSection/> */}
     </AppContext.Provider>
   );
 };
 
-// global custom hook
 const useGlobalContext = () => {
   return useContext(AppContext);
 };
